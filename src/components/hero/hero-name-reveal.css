@@ -1,0 +1,159 @@
+﻿.poster-metadata {
+  position: absolute !important;
+  z-index: 10;
+  top: 50% !important;
+  left: 50% !important;
+  right: auto !important;
+  width: max-content;
+  max-width: 90%;
+  margin: 0 !important;
+  padding: 0;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+}
+
+.poster-identity {
+  max-width: none;
+  padding: 0;
+  border: 0;
+  text-align: center;
+}
+
+.hero-greeting {
+  margin: 0 0 16px;
+  color: #A4A6A5;
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-align: center;
+}
+
+.poster-identity h2 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin: 0;
+  color: #E8E5DE;
+  font-family: var(--font-display);
+  font-size: clamp(38px, 5.2vw, 76px);
+  font-weight: 700;
+  letter-spacing: -0.075em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.poster-identity h2 span {
+  display: inline-block;
+}
+
+@media (max-width: 800px) {
+  .poster-metadata {
+    top: 50% !important;
+    left: 50% !important;
+    max-width: 94%;
+  }
+
+  .poster-identity h2 {
+    font-size: clamp(32px, 7vw, 48px);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-greeting {
+    font-size: 9px;
+  }
+
+  .poster-identity h2 {
+    font-size: clamp(27px, 7.5vw, 36px);
+  }
+}
+
+/* Text position adjustment — globe remains unchanged */
+.poster-metadata {
+  top: 35% !important;
+}
+
+@media (max-width: 800px) {
+  .poster-metadata {
+    top: 35% !important;
+  }
+}
+
+
+/* Larger, higher-positioned hero introduction */
+.poster-metadata {
+  top: 27% !important;
+}
+
+.poster-identity h2 {
+  font-size: clamp(48px, 6.5vw, 94px) !important;
+  letter-spacing: -0.075em;
+}
+
+.hero-greeting {
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+
+@media (max-width: 800px) {
+  .poster-metadata {
+    top: 27% !important;
+  }
+
+  .poster-identity h2 {
+    font-size: clamp(38px, 8vw, 62px) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .poster-metadata {
+    top: 25% !important;
+  }
+
+  .poster-identity h2 {
+    font-size: clamp(30px, 8vw, 42px) !important;
+  }
+}
+
+
+/* Greeting size only */
+.hero-greeting {
+  font-size: 18px !important;
+  letter-spacing: 0.28em;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 800px) {
+  .hero-greeting {
+    font-size: 15px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-greeting {
+    font-size: 13px !important;
+  }
+}
+
+
+.hero-greeting {
+  font-size: 26px !important;
+  letter-spacing: 0.30em;
+  margin-bottom: 22px;
+  font-weight: 500;
+}
+
+@media (max-width: 800px) {
+  .hero-greeting {
+    font-size: 21px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-greeting {
+    font-size: 17px !important;
+  }
+}
+

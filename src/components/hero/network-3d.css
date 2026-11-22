@@ -1,0 +1,81 @@
+﻿.poster-network {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.poster-network__canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: auto;
+}
+
+.poster-network__canvas canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.network-loading {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+}
+
+.network-controls {
+  position: absolute;
+  z-index: 8;
+  right: 24px;
+  bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-family: var(--font-mono, monospace);
+  font-size: 9px;
+  letter-spacing: .08em;
+  pointer-events: auto;
+}
+
+.network-controls__label {
+  color: #A4A6A5;
+  margin-right: 5px;
+}
+
+.network-controls button {
+  border: 1px solid rgba(232, 229, 222, .25);
+  padding: 9px 11px;
+  color: rgba(232, 229, 222, .65);
+  background: rgba(21, 23, 25, .72);
+  transition: color 250ms ease, border-color 250ms ease, background 250ms ease;
+  cursor: pointer;
+}
+
+.network-controls button:hover,
+.network-controls button.is-active {
+  color: #E8E5DE;
+  border-color: #E8E5DE;
+  background: rgba(232, 229, 222, .09);
+}
+
+@media (max-width: 800px) {
+  .network-controls {
+    right: 12px;
+    bottom: 12px;
+    gap: 5px;
+  }
+
+  .network-controls button {
+    padding: 8px;
+    font-size: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .network-controls button {
+    transition: none;
+  }
+}

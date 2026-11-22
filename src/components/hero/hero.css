@@ -473,3 +473,91 @@
   transform: translateY(100px) !important;
 }
 
+
+/* Final hero composition positioning */
+.poster-stage {
+  margin-top: 12px !important;
+  transform: none !important;
+}
+
+.poster-network {
+  z-index: 2;
+}
+
+.poster-portrait {
+  z-index: 1;
+}
+
+.poster-typography {
+  z-index: 3;
+}
+
+@media (max-width: 800px) {
+  .poster-stage {
+    margin-top: 12px !important;
+  }
+}
+
+/* Restore portrait and typography composition */
+.poster-stage {
+  margin-top: clamp(480px, 55vh, 620px) !important;
+  transform: translateY(100px) !important;
+}
+
+/* Globe remains independently positioned in the hero */
+.poster-network {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.poster-network__canvas {
+  position: absolute;
+  inset: 0;
+  transform: translateY(-90px);
+  pointer-events: auto;
+}
+
+@media (max-width: 800px) {
+  .poster-stage {
+    margin-top: 190px !important;
+    transform: none !important;
+  }
+
+  .poster-network__canvas {
+    transform: translateY(-45px);
+  }
+}
+
+@media (max-width: 480px) {
+  .poster-stage {
+    margin-top: 135px !important;
+  }
+}
+
+/* FINAL HERO LAYER ORDER */
+.poster-network {
+  z-index: 0 !important;
+}
+
+.poster-network__canvas {
+  z-index: 0;
+}
+
+.poster-stage {
+  position: relative;
+  z-index: 1;
+}
+
+.poster-portrait {
+  z-index: 1 !important;
+}
+
+.poster-typography {
+  z-index: 3 !important;
+}
+
+.poster-callouts {
+  z-index: 4;
+}

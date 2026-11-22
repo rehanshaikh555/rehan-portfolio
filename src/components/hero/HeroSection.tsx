@@ -9,8 +9,9 @@ import "./hero-portrait.css";
 export default function HeroSection() {
   return (
     <section className="poster-hero">
+      <HeroNetwork />
+
       <div className="poster-stage">
-        <HeroNetwork />
         <HeroPortrait />
         <HeroTypography />
         <HeroCallouts />

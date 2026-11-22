@@ -1,0 +1,9 @@
+﻿.poster-network__canvas {
+  transform: translateY(-90px);
+}
+
+@media (max-width: 800px) {
+  .poster-network__canvas {
+    transform: translateY(-45px);
+  }
+}
