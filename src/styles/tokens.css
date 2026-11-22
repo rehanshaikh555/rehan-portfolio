@@ -1,0 +1,40 @@
+﻿:root {
+  /* Core palette */
+  --color-graphite: #151719;
+  --color-concrete: #777B7C;
+  --color-warm-white: #E8E5DE;
+
+  /* Supporting palette */
+  --color-silver: #A4A6A5;
+  --color-dark-slate: #303436;
+  --color-stone: #C9C6BE;
+
+  /* Semantic colours */
+  --color-background: var(--color-graphite);
+  --color-foreground: var(--color-warm-white);
+  --color-muted: var(--color-silver);
+  --color-border: rgba(232, 229, 222, 0.16);
+
+  /* Typography */
+  --font-display: "Space Grotesk", "Arial", sans-serif;
+  --font-body: "Inter", "Arial", sans-serif;
+  --font-mono: "IBM Plex Mono", "Consolas", monospace;
+
+  /* Layout */
+  --container-width: 1440px;
+  --page-padding: clamp(20px, 5vw, 88px);
+  --section-spacing: clamp(88px, 12vw, 180px);
+
+  /* Motion */
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 200ms;
+  --duration-normal: 450ms;
+  --duration-slow: 800ms;
+}
+
+@theme inline {
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-mono);
+}

@@ -1,0 +1,93 @@
+﻿.poster-portrait {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: calc(50% + clamp(35px, 4vw, 70px));
+  width: min(86%, 960px);
+  height: 115%;
+  overflow: visible;
+  background: transparent;
+  isolation: auto;
+  -webkit-mask-image: radial-gradient(
+    ellipse 67% 69% at 53% 39%,
+    #000 20%,
+    rgba(0,0,0,.88) 43%,
+    rgba(0,0,0,.48) 65%,
+    rgba(0,0,0,.12) 82%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 67% 69% at 53% 39%,
+    #000 20%,
+    rgba(0,0,0,.88) 43%,
+    rgba(0,0,0,.48) 65%,
+    rgba(0,0,0,.12) 82%,
+    transparent 100%
+  );
+}
+
+.poster-portrait__image {
+  object-fit: contain;
+  object-position: center bottom;
+  opacity: .58;
+  filter: grayscale(100%) brightness(.70) contrast(.82) blur(1px);
+}
+
+.poster-portrait__shade {
+  display: none;
+}
+
+.poster-portrait::after {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse at 50% 40%,
+      transparent 25%,
+      rgba(21,23,25,.12) 60%,
+      rgba(21,23,25,.8) 100%
+    ),
+    radial-gradient(
+      rgba(232,229,222,.8) .8px,
+      transparent 1px
+    );
+  background-size: auto, 7px 7px;
+  opacity: .38;
+  mix-blend-mode: screen;
+  mask-image: radial-gradient(
+    ellipse at 62% 48%,
+    black 0%,
+    rgba(0,0,0,.75) 38%,
+    transparent 76%
+  );
+  content: "";
+  pointer-events: none;
+}
+
+@media (max-width: 800px) {
+  .poster-portrait {
+    top: 26%;
+    left: 50%;
+    width: 100%;
+    height: 72%;
+  }
+
+  .poster-portrait__image {
+    opacity: .68;
+  }
+
+  .poster-portrait::after {
+    background-size: auto, 6px 6px;
+    opacity: .3;
+  }
+}
+
+@media (max-width: 480px) {
+  .poster-portrait {
+    top: 28%;
+    left: 50%;
+    width: 110%;
+    transform: translateX(-50%);
+  }
+}
