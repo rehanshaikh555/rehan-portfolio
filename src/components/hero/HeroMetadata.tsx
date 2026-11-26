@@ -1,65 +1,63 @@
-﻿"use client";
+"use client";
 
 import { motion, useReducedMotion } from "framer-motion";
 import "./hero-name-reveal.css";
-
-const greeting = "HELLO, I'M";
-const name = "REHAN SHAIKH";
 
 export default function HeroMetadata() {
   const reduceMotion = useReducedMotion();
 
   return (
     <div className="poster-metadata">
-      <motion.div
-        className="poster-identity"
-        initial={reduceMotion ? false : { opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: reduceMotion ? 0 : 1.2,
-          delay: reduceMotion ? 0 : 0.6,
-          ease: [0.22, 1, 0.36, 1],
-        }}
-      >
-        <motion.p
-          className="hero-greeting"
-          initial={reduceMotion ? false : { opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: reduceMotion ? 0 : 1.1,
-            delay: reduceMotion ? 0 : 0.9,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-        >
-          {greeting}
-        </motion.p>
+      <div className="poster-identity">
 
-        <h2 aria-label={`${greeting} ${name}`}>
-          {Array.from(name).map((character, index) => (
-            <motion.span
-              key={`${character}-${index}`}
-              aria-hidden="true"
-              initial={
-                reduceMotion
-                  ? false
-                  : { opacity: 0, y: 28, filter: "blur(7px)" }
-              }
-              animate={{
-                opacity: 1,
-                y: 0,
-                filter: "blur(0px)",
-              }}
-              transition={{
-                duration: reduceMotion ? 0 : 0.65,
-                delay: reduceMotion ? 0 : 1.65 + index * 0.19,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-            >
-              {character === " " ? "\u00A0" : character}
-            </motion.span>
-          ))}
-        </h2>
-      </motion.div>
+        <div className="hero-text-mask hero-greeting-mask">
+          <motion.p
+            className="hero-greeting"
+            initial={reduceMotion ? false : {
+              y: "110%",
+              opacity: 0,
+              filter: "blur(8px)",
+            }}
+            animate={{
+              y: "0%",
+              opacity: 1,
+              filter: "blur(0px)",
+            }}
+            transition={{
+              duration: reduceMotion ? 0 : 1.25,
+              delay: reduceMotion ? 0 : 0.35,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
+            HELLO, I'M
+          </motion.p>
+        </div>
+
+        <div className="hero-text-mask hero-name-mask">
+          <motion.h2
+            className="hero-name-scan"
+            aria-label="REHAN SHAIKH"
+            initial={reduceMotion ? false : {
+              clipPath: "inset(0 100% 0 0)",
+              opacity: 0.35,
+              filter: "blur(10px)",
+            }}
+            animate={{
+              clipPath: "inset(0 0% 0 0)",
+              opacity: 1,
+              filter: "blur(0px)",
+            }}
+            transition={{
+              duration: reduceMotion ? 0 : 2.2,
+              delay: reduceMotion ? 0 : 0.85,
+              ease: [0.76, 0, 0.24, 1],
+            }}
+          >
+            REHAN SHAIKH
+          </motion.h2>
+        </div>
+
+      </div>
     </div>
   );
 }

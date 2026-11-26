@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
@@ -49,6 +49,14 @@ function NetworkSphere({ mode }: { mode: GlobeMode }) {
 
       for (const item of nearest) {
         if (item.index > i) {
+          const dx = Math.abs(points[i].x - points[item.index].x);
+          const dy = Math.abs(points[i].y - points[item.index].y);
+
+          // Exclude almost-vertical connections from the visible network.
+          if (dx < 0.14 && dy > 0.12) {
+            continue;
+          }
+
           edges.push(
             points[i].x, points[i].y, points[i].z,
             points[item.index].x,
@@ -140,6 +148,7 @@ function NetworkSphere({ mode }: { mode: GlobeMode }) {
         />
       </lineSegments>
 
+
       <mesh>
         <sphereGeometry args={[2.12, 32, 32]} />
         <meshBasicMaterial
@@ -148,15 +157,14 @@ function NetworkSphere({ mode }: { mode: GlobeMode }) {
           transparent
           opacity={0.045}
         />
-      </mesh>
-    </group>
+      </mesh>    </group>
   );
 }
 
 export default function NetworkScene({ mode }: { mode: GlobeMode }) {
   return (
     <Canvas
-      camera={{ position: [0, 0, 8.5], fov: 42 }}
+      camera={{ position: [0, 0, 6.0], fov: 42 }}
       dpr={[1, 1.5]}
       gl={{ alpha: true, antialias: true }}
       frameloop="always"
@@ -165,6 +173,12 @@ export default function NetworkScene({ mode }: { mode: GlobeMode }) {
     </Canvas>
   );
 }
+
+
+
+
+
+
 
 
 

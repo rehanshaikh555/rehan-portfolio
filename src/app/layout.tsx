@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Navbar from "@/components/navigation/Navbar";
 import { siteConfig } from "@/data/site-config";

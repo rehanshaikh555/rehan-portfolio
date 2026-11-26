@@ -1,0 +1,65 @@
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #E8E5DE;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  opacity: 0;
+  will-change: transform;
+  transition:
+    width 220ms ease,
+    height 220ms ease,
+    background-color 250ms ease,
+    opacity 200ms ease;
+}
+
+body.custom-cursor-enabled .custom-cursor {
+  opacity: 1;
+}
+
+.custom-cursor--interactive {
+  width: 12px;
+  height: 12px;
+  background: #8BA9FF;
+  mix-blend-mode: normal;
+  box-shadow: 0 0 12px rgba(139, 169, 255, 0.5);
+}
+
+.custom-cursor--click {
+  animation: cursor-click-pulse 350ms ease-out;
+}
+
+@keyframes cursor-click-pulse {
+  0% { scale: 1; }
+  50% { scale: 1.8; }
+  100% { scale: 1; }
+}
+
+body.custom-cursor-enabled,
+body.custom-cursor-enabled a,
+body.custom-cursor-enabled button,
+body.custom-cursor-enabled input,
+body.custom-cursor-enabled textarea,
+body.custom-cursor-enabled select,
+body.custom-cursor-enabled [role="button"] {
+  cursor: none !important;
+}
+
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .custom-cursor {
+    display: none;
+  }
+
+  body.custom-cursor-enabled,
+  body.custom-cursor-enabled a,
+  body.custom-cursor-enabled button {
+    cursor: auto !important;
+  }
+}
+
+
